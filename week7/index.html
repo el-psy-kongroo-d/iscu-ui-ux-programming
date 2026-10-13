@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re:hear | 발표 연습 흐름</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="practice.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="siteHeader"><a class="brand" href="#about">Re:hear</a><nav class="mainNav" aria-label="주요 메뉴"><a href="#about">서비스 소개</a><a href="#practice">연습 찾기</a><a href="#flow">연습 준비</a><a href="#subscribe">알림 신청</a></nav></header>
+    <main>
+        <section class="hero" id="about"><div class="heroCopy"><h1>오늘의 발표 연습을<br>내 시간에 맞춰 준비해요.</h1><p>연습할 주제를 찾고, 목표와 시간을 정해 오늘의 연습 계획을 완성해 보세요.</p><a class="primaryButton" href="#practice">연습 주제 찾기</a></div><img src="assets/images/service.png" alt="발표 연습 서비스를 사용하는 모습"></section>
+        <section class="section" id="features">
+            <div class="sectionHeading"><h2>필요한 순간에 맞춘 발표 연습</h2></div>
+            <div class="cardGrid">
+                <article class="featureCard"><h3>단계별 발표 연습</h3><p>짧은 문장부터 발표 전체까지 부담을 나누어 연습해요.</p></article>
+                <article class="featureCard"><h3>가상 청중 연습</h3><p>실제 상황을 떠올리며 발표 속도와 시선을 점검해요.</p></article>
+                <article class="featureCard"><h3>발표 피드백</h3><p>연습 결과를 확인하고 다음 연습 목표를 정해요.</p></article>
+            </div>
+        </section>
+        <section class="section practiceSection" id="practice">
+            <div class="sectionHeading"><h2>오늘의 발표 연습을 골라 보세요.</h2><p>검색과 난이도로 주제를 찾고, 원하는 연습을 선택해 준비 화면으로 이동해요.</p></div>
+            <div class="tabList" role="tablist" aria-label="연습 유형">
+                <button class="tabButton isActive" id="tab-basic" type="button" role="tab" aria-selected="true" aria-controls="tab-panel-basic" data-tab="basic">기초 연습</button>
+                <button class="tabButton" id="tab-story" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-story" data-tab="story">스토리 연습</button>
+                <button class="tabButton" id="tab-feedback" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-feedback" data-tab="feedback">피드백 보기</button>
+            </div>
+            <div class="tabPanels">
+                <div class="tabPanel isVisible" id="tab-panel-basic" role="tabpanel" aria-labelledby="tab-basic" data-panel="basic"><h3>기초 연습</h3><p>인사와 핵심 문장을 짧게 말하며 발표의 첫 문을 열어요.</p></div>
+                <div class="tabPanel" id="tab-panel-story" role="tabpanel" aria-labelledby="tab-story" data-panel="story" hidden><h3>스토리 연습</h3><p>도입·전개·마무리를 연결해 발표 내용을 자연스럽게 구성해요.</p></div>
+                <div class="tabPanel" id="tab-panel-feedback" role="tabpanel" aria-labelledby="tab-feedback" data-panel="feedback" hidden><h3>피드백 보기</h3><p>지난 연습의 속도와 전달력을 돌아보고 다음 목표를 정해요.</p></div>
+            </div>
+            <div class="practiceControls">
+                <label for="topicSearch">연습 검색</label><input id="topicSearch" type="search" placeholder="예: 자기소개" autocomplete="off">
+                <label for="difficultyFilter">난이도</label><select id="difficultyFilter"><option value="all">전체</option><option value="beginner">입문</option><option value="intermediate">기초</option></select>
+            </div>
+            <p class="statusMessage" id="topicMessage" role="status">연습 3개를 찾았어요.</p>
+            <div class="topicGrid">
+                <article class="topicCard" data-title="자기소개 시작하기" data-level="beginner"><h3>자기소개 시작하기</h3><p>입문 · 권장 5분</p><button class="secondaryButton" type="button" data-start-topic="자기소개 시작하기">이 연습 시작</button></article>
+                <article class="topicCard" data-title="프로젝트 설명하기" data-level="intermediate"><h3>프로젝트 설명하기</h3><p>기초 · 권장 10분</p><button class="secondaryButton" type="button" data-start-topic="프로젝트 설명하기">이 연습 시작</button></article>
+                <article class="topicCard" data-title="질문에 답하기" data-level="intermediate"><h3>질문에 답하기</h3><p>기초 · 권장 8분</p><button class="secondaryButton" type="button" data-start-topic="질문에 답하기">이 연습 시작</button></article>
+            </div>
+        </section>
+        <section class="section flowSection" id="flow">
+            <div class="sectionHeading"><h2>오늘의 연습 준비</h2><p>주제, 목표, 시간을 정하고 확인하면 준비가 끝나요. 이전 단계로 돌아가도 입력한 값은 유지됩니다.</p></div>
+            <ol class="flowSteps" aria-label="발표 연습 단계"><li class="isCurrent" data-step-indicator="1">목표 선택</li><li data-step-indicator="2">내용 입력</li><li data-step-indicator="3">확인</li><li data-step-indicator="4">완료</li></ol>
+            <div class="flowPanel" data-step="1"><p class="stepLabel">1 / 4</p><h3 tabindex="-1">어떤 발표를 연습할까요?</h3><div class="scenarioGrid"><button class="scenarioButton" type="button" aria-pressed="false" data-scenario="자기소개 시작하기">자기소개</button><button class="scenarioButton" type="button" aria-pressed="false" data-scenario="프로젝트 설명하기">프로젝트 발표</button><button class="scenarioButton" type="button" aria-pressed="false" data-scenario="질문에 답하기">질문 답변</button></div><p class="formError" id="scenarioError" role="alert"></p><button class="primaryButton nextButton" type="button" id="startFlow">목표와 시간 정하기</button></div>
+            <div class="flowPanel" data-step="2" hidden>
+                <p class="stepLabel">2 / 4</p><h3 tabindex="-1">목표와 시간을 정해요.</h3>
+                <div class="formField"><label for="practiceLevel">발표 난이도 (필수)</label><select id="practiceLevel" aria-required="true" aria-describedby="detailError"><option value="">난이도를 선택해 주세요</option><option value="입문">입문</option><option value="기초">기초</option><option value="실전">실전</option></select></div>
+                <div class="formField"><label for="practiceGoal">오늘의 목표 (필수)</label><input id="practiceGoal" type="text" maxlength="40" aria-required="true" aria-describedby="detailError" placeholder="예: 첫 문장을 또렷하게 말하기"></div>
+                <div class="formField"><label for="practiceMinutes">연습 시간 (필수)</label><select id="practiceMinutes" aria-required="true" aria-describedby="detailError"><option value="">시간을 선택해 주세요</option><option value="5">5분</option><option value="10">10분</option><option value="15">15분</option></select></div>
+                <p class="formError" id="detailError" role="alert"></p>
+                <div class="buttonRow"><button class="secondaryButton" type="button" data-back="1">주제 다시 선택</button><button class="primaryButton" type="button" id="confirmDetail">연습 계획 확인</button></div>
+            </div>
+            <div class="flowPanel" data-step="3" hidden><p class="stepLabel">3 / 4</p><h3 tabindex="-1">선택한 내용을 확인해요.</h3><dl class="summaryList"><div><dt>발표 주제</dt><dd id="summaryScenario"></dd></div><div><dt>난이도</dt><dd id="summaryLevel"></dd></div><div><dt>오늘의 목표</dt><dd id="summaryGoal"></dd></div><div><dt>연습 시간</dt><dd id="summaryMinutes"></dd></div></dl><div class="buttonRow"><button class="secondaryButton" type="button" data-back="2">내용 수정</button><button class="primaryButton" type="button" id="completeFlow">이 계획으로 준비 완료</button></div></div>
+            <div class="flowPanel completionPanel" data-step="4" hidden><p class="stepLabel">4 / 4</p><h3 tabindex="-1">연습 준비가 끝났어요.</h3><p id="completionMessage" role="status" aria-live="polite"></p><p>정한 시간만큼 목표 문장을 소리 내어 연습해 보세요. 이 화면에서는 녹음이나 AI 분석을 실행하지 않아요.</p><button class="primaryButton" type="button" id="restartFlow">처음부터 다시 시작</button></div>
+        </section>
+        <section class="section subscribeSection" id="subscribe"><div class="sectionHeading"><p class="eyebrow">STAY TUNED</p><h2>새로운 연습 소식을 받아 보세요.</h2></div><form class="subscribeForm" id="subscribeForm"><label for="email">이메일</label><input type="email" id="email" placeholder="you@example.com" required><button class="primaryButton" id="subscribeButton" type="submit">알림 신청</button><p class="statusMessage" id="subscribeMessage" role="status" aria-live="polite"></p></form></section>
+    </main>
+    <footer class="siteFooter"><p>Re:hear · 말하기를 다시 듣고, 더 나아지는 연습</p></footer><script src="practice.js"></script><script src="script.js?v=2"></script>
+</body>
+</html>

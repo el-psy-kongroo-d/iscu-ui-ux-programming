@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re:hear | 동적 UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+    <header class="siteHeader">
+        <a class="brand" href="#about">Re:hear</a>
+        <nav class="mainNav" aria-label="주요 메뉴">
+            <a href="#about">서비스 소개</a>
+            <a href="#features">기능</a>
+            <a href="#practice">연습 구성</a>
+            <a href="#subscribe">알림 신청</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="about">
+            <div class="heroCopy">
+                <p class="eyebrow">SPEECH PRACTICE SERVICE</p>
+                <h1>말하기 전의 연습을<br>Re:hear에서 시작해요.</h1>
+                <p>발표 주제를 고르고, 단계별 연습과 피드백으로 자신 있게 말하는 흐름을 만들어 보세요.</p>
+                <a class="primaryButton" href="#practice">연습 구성 살펴보기</a>
+            </div>
+            <img src="assets/images/service.png" alt="발표 연습 서비스를 사용하는 모습">
+        </section>
+
+        <section class="section" id="features">
+            <div class="sectionHeading">
+                <p class="eyebrow">FEATURES</p>
+                <h2>필요한 순간에 맞춘 발표 연습</h2>
+            </div>
+            <div class="cardGrid">
+                <article class="featureCard"><span>01</span><h3>단계별 발표 연습</h3><p>짧은 문장부터 발표 전체까지 부담을 나누어 연습해요.</p></article>
+                <article class="featureCard"><span>02</span><h3>가상 청중 연습</h3><p>실제 상황을 떠올리며 발표 속도와 시선을 점검해요.</p></article>
+                <article class="featureCard"><span>03</span><h3>발표 피드백</h3><p>연습 결과를 확인하고 다음 연습 목표를 정해요.</p></article>
+            </div>
+        </section>
+
+        <section class="section practiceSection" id="practice">
+            <div class="sectionHeading">
+                <p class="eyebrow">DYNAMIC PRACTICE</p>
+                <h2>오늘의 발표 연습을 골라 보세요.</h2>
+                <p>탭, 검색, 난이도 선택에 따라 화면이 즉시 바뀝니다.</p>
+            </div>
+            <div class="tabList" role="tablist" aria-label="연습 유형">
+                <button class="tabButton isActive" type="button" role="tab" aria-selected="true" aria-controls="tab-panel-basic" data-tab="basic">기초 연습</button>
+                <button class="tabButton" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-story" data-tab="story">스토리 연습</button>
+                <button class="tabButton" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-feedback" data-tab="feedback">피드백 보기</button>
+            </div>
+            <div class="tabPanels">
+                <div class="tabPanel isVisible" id="tab-panel-basic" role="tabpanel" data-panel="basic"><h3>기초 연습</h3><p>인사와 핵심 문장을 짧게 말하며 발표의 첫 문을 열어요.</p></div>
+                <div class="tabPanel" id="tab-panel-story" role="tabpanel" data-panel="story" hidden><h3>스토리 연습</h3><p>도입·전개·마무리를 연결해 발표 내용을 자연스럽게 구성해요.</p></div>
+                <div class="tabPanel" id="tab-panel-feedback" role="tabpanel" data-panel="feedback" hidden><h3>피드백 보기</h3><p>지난 연습의 속도와 전달력을 돌아보고 다음 목표를 정해요.</p></div>
+            </div>
+            <div class="practiceControls">
+                <label for="topicSearch">연습 검색</label>
+                <input id="topicSearch" type="search" placeholder="예: 자기소개" autocomplete="off">
+                <label for="difficultyFilter">난이도</label>
+                <select id="difficultyFilter">
+                    <option value="all">전체</option>
+                    <option value="beginner">입문</option>
+                    <option value="intermediate">기초</option>
+                </select>
+            </div>
+            <p class="statusMessage" id="topicMessage" role="status" aria-live="polite">연습 3개를 찾았어요.</p>
+            <div class="topicGrid" id="topicList">
+                <article class="topicCard" data-title="자기소개 시작하기" data-level="beginner"><h3>자기소개 시작하기</h3><p>입문 · 5분</p><button class="secondaryButton" type="button" data-start-topic="자기소개 시작하기">이 연습 시작</button></article>
+                <article class="topicCard" data-title="프로젝트 설명하기" data-level="intermediate"><h3>프로젝트 설명하기</h3><p>기초 · 10분</p><button class="secondaryButton" type="button" data-start-topic="프로젝트 설명하기">이 연습 시작</button></article>
+                <article class="topicCard" data-title="질문에 답하기" data-level="intermediate"><h3>질문에 답하기</h3><p>기초 · 8분</p><button class="secondaryButton" type="button" data-start-topic="질문에 답하기">이 연습 시작</button></article>
+            </div>
+        </section>
+
+        <section class="section subscribeSection" id="subscribe">
+            <div class="sectionHeading"><p class="eyebrow">STAY TUNED</p><h2>새로운 연습 소식을 받아 보세요.</h2></div>
+            <form class="subscribeForm" id="subscribeForm">
+                <label for="email">이메일</label><input type="email" id="email" placeholder="you@example.com" required>
+                <button class="primaryButton" id="subscribeButton" type="submit">알림 신청</button>
+                <p class="statusMessage" id="subscribeMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer class="siteFooter"><p>Re:hear · 말하기를 다시 듣고, 더 나아지는 연습</p></footer>
+    <script src="script.js?v=2"></script>
+</body>
+</html>
