@@ -37,4 +37,18 @@
 
 - 저장소: https://github.com/el-psy-kongroo-d/iscu-ui-ux-programming
 - Pages 주소: https://el-psy-kongroo-d.github.io/iscu-ui-ux-programming/week6/
-- 배포 상태: 로컬 검증 완료. GitHub 반영과 배포 화면 확인은 아직 진행하지 않았다.
+- 배포 상태: 교안 반영 수정본의 로컬 검증 완료. 수정본 GitHub Pages 확인은 배포 후 기록한다.
+
+## 교안 실습 반영 · 2026-10-14
+
+6주차 교안 p.7–23의 실습을 기존 서비스에 추가했다. 테마·발표자 이름·녹음 활용 동의의 ID와 처리 함수는 교안의 이름을 사용한다.
+
+- 테마: `handleThemeClick`에서 `body.classList.toggle("dark")`와 버튼 문구를 함께 변경한다.
+- 이름: `maxlength="10"`, `value.length`, `textContent`로 0–10 글자 수를 표시한다.
+- 동의: `checked`, `disabled`, `is-ready`를 동기화한다. 실제 녹음·저장·분석은 하지 않는다.
+- 탭: `.tab`·`.panel`, `data-target`, `resetTabsAndPanels`, `activateTab`, `handleTabClick`, `event.currentTarget`을 사용한다.
+- 접근성: 패널의 `aria-labelledby`와 버튼의 `aria-controls`를 연결한다. 기존 방향키·Home·End 기능도 유지한다.
+- 모바일: 768px 이하에서 탭과 설정 카드를 세로로 배치한다.
+- Chrome 1100·768·390px에서 테마 왕복, 이름 입력·삭제, 동의 체크·해제, 세 탭 전환, 검색 결과 없음·복원을 조작해 확인했다. 가로 잘림과 검증 중 콘솔 오류가 없었다.
+
+교안과 다른 서비스 문구·색상·패널 ID는 Re:hear에 맞춘 것이다. 검색·난이도 필터·카드 선택·알림 입력 확인은 기존 기능으로 유지한다. 교안의 임시 Console 출력 대신 완성 UI를 적용했다.

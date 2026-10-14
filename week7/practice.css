@@ -34,7 +34,7 @@ h3 { font-size: 1.2rem; }
 .practiceSection { padding-top: 30px; }
 .tabList { display: flex; gap: 8px; border-bottom: 1px solid var(--line); }
 .tabButton { padding: 12px 18px; color: var(--muted); border: 0; border-bottom: 3px solid transparent; background: transparent; cursor: pointer; }
-.tabButton.isActive { color: var(--brand); border-bottom-color: var(--brand); font-weight: 700; }
+.tabButton.is-active { color: var(--brand); border-bottom-color: var(--brand); font-weight: 700; }
 .tabPanels { padding: 20px 0; }
 .tabPanel { background: var(--soft); }
 .practiceControls { display: grid; grid-template-columns: auto minmax(180px, 1fr) auto 170px; gap: 12px; align-items: center; margin: 20px 0 8px; }
@@ -54,5 +54,25 @@ button:disabled { opacity: .65; cursor: default; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   button, a { transition: none !important; }
+}
+.event-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.event-card { padding: 24px; border: 1px solid var(--line); border-radius: 12px; }
+.event-card label { display: block; margin: 18px 0 8px; }
+.event-card input[type="text"] { width: 100%; }
+.event-card button { margin-top: 16px; }
+.agree-row { font-size: .9rem; }
+.agree-row input { margin-right: 8px; }
+.demoNote { font-size: .8rem; color: var(--muted); }
+.is-ready { color: var(--brand); font-weight: 700; }
+body.dark { color: #f4f4f8; background-color: #20212a; --ink: #f4f4f8; --muted: #d8d8e2; --brand: #b9b5ff; --soft: #363248; --line: #50515f; --white: #2d2e38; }
+body.dark p, body.dark nav a { color: #d8d8e2; }
+body.dark .featureCard, body.dark .event-card, body.dark .topicCard, body.dark .tabPanel, body.dark .subscribeSection { border-color: #50515f; background-color: #2d2e38; }
+body.dark .tab.is-active { color: #b9b5ff; border-color: #b9b5ff; }
+body.dark .primaryButton { color: #20212a; }
+@media (max-width: 768px) {
+  .event-grid { grid-template-columns: 1fr; }
+  .event-card { padding: 24px 20px; }
+  .tabList { flex-direction: column; align-items: stretch; }
+  .tab { width: 100%; text-align: left; }
 }
 @media (max-width: 768px) { .siteHeader { align-items: flex-start; flex-direction: column; } .mainNav { gap: 10px 16px; } .hero { min-height: auto; padding: 42px 0; grid-template-columns: 1fr; gap: 28px; } .hero img { justify-self: start; max-width: 100%; } .section { padding: 54px 0; } .cardGrid, .topicGrid { grid-template-columns: 1fr; } .practiceControls, .subscribeForm { grid-template-columns: 1fr; } .subscribeForm .statusMessage { grid-column: auto; } .tabButton { flex: 1; padding-inline: 8px; font-size: .9rem; } }

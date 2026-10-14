@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <header class="siteHeader">
@@ -43,6 +43,14 @@
             </div>
         </section>
 
+        <section class="section" id="event-practice">
+            <h2>발표 준비 설정</h2>
+            <div class="event-grid">
+                <article class="event-card"><h3>화면 테마</h3><button id="themeButton" type="button" class="secondaryButton">다크 테마로 바꾸기</button></article>
+                <article class="event-card"><h3>발표자 정보</h3><label for="nickname">발표자 이름</label><input type="text" id="nickname" maxlength="10"><p id="nicknameCount" aria-live="polite">0 / 10</p></article>
+                <article class="event-card"><h3>녹음 활용 동의</h3><label class="agree-row"><input type="checkbox" id="agreeCheck">발표 분석을 위한 녹음 활용에 동의합니다.</label><p id="agreeMessage" aria-live="polite">동의 후 훈련을 시작할 수 있습니다.</p><button id="startButton" type="button" class="primaryButton" disabled>훈련 시작하기</button><p class="demoNote">동의 상태를 확인하는 시연입니다. 실제 녹음·저장·분석은 하지 않아요.</p></article>
+            </div>
+        </section>
         <section class="section practiceSection" id="practice">
             <div class="sectionHeading">
                 <p class="eyebrow">DYNAMIC PRACTICE</p>
@@ -50,14 +58,14 @@
                 <p>탭, 검색, 난이도 선택에 따라 화면이 즉시 바뀝니다.</p>
             </div>
             <div class="tabList" role="tablist" aria-label="연습 유형">
-                <button class="tabButton isActive" type="button" role="tab" aria-selected="true" aria-controls="tab-panel-basic" data-tab="basic">기초 연습</button>
-                <button class="tabButton" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-story" data-tab="story">스토리 연습</button>
-                <button class="tabButton" type="button" role="tab" aria-selected="false" aria-controls="tab-panel-feedback" data-tab="feedback">피드백 보기</button>
+                <button class="tabButton tab is-active" type="button" role="tab" aria-selected="true" id="tab-basic" aria-controls="tab-panel-basic" data-target="#tab-panel-basic">기초 연습</button>
+                <button class="tabButton tab" type="button" role="tab" aria-selected="false" id="tab-story" aria-controls="tab-panel-story" data-target="#tab-panel-story">스토리 연습</button>
+                <button class="tabButton tab" type="button" role="tab" aria-selected="false" id="tab-feedback" aria-controls="tab-panel-feedback" data-target="#tab-panel-feedback">피드백 보기</button>
             </div>
             <div class="tabPanels">
-                <div class="tabPanel isVisible" id="tab-panel-basic" role="tabpanel" data-panel="basic"><h3>기초 연습</h3><p>인사와 핵심 문장을 짧게 말하며 발표의 첫 문을 열어요.</p></div>
-                <div class="tabPanel" id="tab-panel-story" role="tabpanel" data-panel="story" hidden><h3>스토리 연습</h3><p>도입·전개·마무리를 연결해 발표 내용을 자연스럽게 구성해요.</p></div>
-                <div class="tabPanel" id="tab-panel-feedback" role="tabpanel" data-panel="feedback" hidden><h3>피드백 보기</h3><p>지난 연습의 속도와 전달력을 돌아보고 다음 목표를 정해요.</p></div>
+                <div class="tabPanel panel is-active" id="tab-panel-basic" role="tabpanel" aria-labelledby="tab-basic"><h3>기초 연습</h3><p>인사와 핵심 문장을 짧게 말하며 발표의 첫 문을 열어요.</p></div>
+                <div class="tabPanel panel" id="tab-panel-story" role="tabpanel" aria-labelledby="tab-story" hidden><h3>스토리 연습</h3><p>도입·전개·마무리를 연결해 발표 내용을 자연스럽게 구성해요.</p></div>
+                <div class="tabPanel panel" id="tab-panel-feedback" role="tabpanel" aria-labelledby="tab-feedback" hidden><h3>피드백 보기</h3><p>지난 연습의 속도와 전달력을 돌아보고 다음 목표를 정해요.</p></div>
             </div>
             <div class="practiceControls">
                 <label for="topicSearch">연습 검색</label>
@@ -87,6 +95,6 @@
         </section>
     </main>
     <footer class="siteFooter"><p>Re:hear · 말하기를 다시 듣고, 더 나아지는 연습</p></footer>
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
