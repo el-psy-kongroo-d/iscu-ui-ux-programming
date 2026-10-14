@@ -37,7 +37,7 @@
 
 - 저장소: https://github.com/el-psy-kongroo-d/iscu-ui-ux-programming
 - Pages 주소: https://el-psy-kongroo-d.github.io/iscu-ui-ux-programming/week6/
-- 배포 상태: 교안 반영 수정본의 로컬 검증 완료. 수정본 GitHub Pages 확인은 배포 후 기록한다.
+- 배포 상태: 2026-10-14 GitHub Pages 수정본 배포 성공. 실제 Pages 주소에서 테마·글자 수·동의·탭 전환를 조작해 확인했고 검증 중 콘솔 오류가 없었다.
 
 ## 교안 실습 반영 · 2026-10-14
 
