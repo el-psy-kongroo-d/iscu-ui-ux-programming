@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데브리허설</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+      사용자: 프로젝트 발표와 기술 면접을 준비하는 개발자 
+      목적: 맡은 역할과 기술 선택 이유를 자신의 말로 설명하기 
+      핵심 행동: 프로젝트 발표 시간과 기술 질문 수 설정하기 
+      정보 순서: 소개→기능→방법→세션 설정 
+      -->
+
+    <header>
+        <h1>데브리허설</h1>
+        <p>만든 코드를 말로 설명하는 연습, 프로젝트 소개부터 기술 질문까지 함께 준비해요.</p>
+
+        <nav aria-label="주요 메뉴">
+            <a href="#about">서비스 소개</a>
+            <a href="#features">연습 방법</a>
+            <a href="#steps">이용 방법</a>
+            <a href="#subscribe">데브리허설 소식</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>서비스 소개</h2>
+            <h3>프로젝트는 만들었는데, 설명하려니 막막한 개발자를 위해</h3>
+
+            <img src="assets/images/service.png" alt="가상 청중 앞에서 프로젝트 발표를 연습하는 모습">
+
+            <p> 직접 맡은 기능과 기술을 선택한 이유를 정리하고, 면접관 앞에서 말하듯 프로젝트를 소개해요.</p>
+            <p> 이 페이지는 개발자 발표 연습 서비스의 시연 화면이에요. 입력과 화면 전환만 체험하며 실제 녹음이나 AI 분석은 하지 않아요.</p>
+        </section>
+
+        <section id="features">
+            <h2>연습 방법</h2>
+
+            <div class="tabs" role="tablist" aria-label="기능 선택">
+                <button 
+                    id="tab-practice" 
+                    class="tab is-active" 
+                    type="button"
+                    role="tab" 
+                    aria-selected="true" 
+                    aria-controls="feature-practice"
+                    data-target="#feature-practice">
+                    프로젝트 소개
+                </button>
+
+                <button
+                    id="tab-audience"
+                    class="tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="feature-audience"
+                    data-target="#feature-audience">
+                    기술 질문
+                </button>
+
+                <button
+                    id="tab-feedback"
+                    class="tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    aria-controls="feature-feedback"
+                    data-target="#feature-feedback">
+                    설명 점검
+                </button>
+            </div>
+
+            <div    
+                id="feature-practice"
+                class="panel is-active"
+                role="tabpanel"
+                aria-labelledby="tab-practice">
+                <h3>내가 맡은 기능부터 차근차근</h3>
+                <p>프로젝트의 목적, 내가 맡은 역할, 해결한 문제 순서로 말할 내용을 정리해요.</p>
+            </div>
+
+            <div
+                id="feature-audience"
+                class="panel"
+                role="tabpanel"
+                aria-labelledby="tab-audience"
+                hidden>
+                <h3>왜 이 기술을 골랐나요?</h3>
+                <p>사용한 기술을 고른 이유와 구현 중 막혔던 점을 예상 질문으로 준비해요.</p>
+            </div>
+
+            <div
+                id="feature-feedback"
+                class="panel"
+                role="tabpanel"
+                aria-labelledby="tab-feedback"
+                hidden>
+                <h3>경험이 드러나는 설명인지 점검해요</h3>
+                <p>기술 이름만 나열하지 않았는지, 내가 한 선택과 그 결과를 설명했는지 돌아봐요.</p>
+            </div>
+        </section>
+
+        <section id="steps">
+            <h2> 이용 방법 </h2>
+            <ol>
+                <li>소개할 프로젝트와 맡은 역할을 먼저 정리해요.</li>
+                <li>발표자 이름을 입력해요.</li>
+                <li>녹음 활용 안내를 읽고 동의 여부를 선택해요.</li>
+                <li>세 가지 연습 방법을 살펴보고 말할 내용을 준비해요.</li>
+                <li>사용한 기술과 해결한 문제를 자신의 말로 설명해 봐요.</li>
+            </ol>
+        </section>
+
+        <section id="event-practice">
+            <h2>프로젝트 발표 준비</h2>
+
+            <div class="event-grid">
+                <article class="event-card">
+                    <h3>화면 테마</h3>
+                    <button id="themeButton" type="button">다크 테마로 바꾸기</button>
+                </article>
+
+                <article class="event-card">
+                    <h3>발표자 정보</h3>
+                    <label for="nickname">발표자 이름</label>
+                    <input type="text" id="nickname" maxlength="10">
+                    <p id="nicknameCount" aria-live="polite">0 / 10</p>
+                </article>
+
+                <article class="event-card">
+                    <h3>녹음 활용 동의</h3>
+                    <label class="agree-row">
+                        <input type="checkbox" id="agreeCheck">
+                        프로젝트 발표 연습에 녹음을 활용하는 데 동의해요. 
+                    </label>
+                    <p id="agreeMessage" aria-live="polite">
+                        동의하면 프로젝트 발표 연습을 시작할 수 있어요.
+                    </p>
+                    <button id="startButton" type="button" disabled>
+                        발표 연습 시작하기
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section id="subscribe" class="subscribe-card">
+            <h2> 데브리허설 소식</h2>
+            <form id="subscribe-form">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email">
+                <button id="subscribeButton" type="submit">연습 소식 신청하기</button>
+            </form>
+
+            <p id="subscribeMessage" aria-live="polite">
+                데브리허설 소식을 받을 이메일을 입력해주세요.
+            </p>
+            
+        </section>
+    </main>
+
+    <footer>
+        <small>© 2026 데브리허설 · 개발자 프로젝트 발표 연습</small>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
